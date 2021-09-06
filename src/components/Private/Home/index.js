@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-
+import Metadata from "../../Metadata";
 const Home = () => {
   return (
     <>
+      <Metadata
+        title="Home Page"
+        content={"Placen where you can find your information about twitter"}
+      />
       <div>Hola Home </div>
       <Link to="profile">Profile</Link>
       <Link to="timeline/1">Timeline</Link>

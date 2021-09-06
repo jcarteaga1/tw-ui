@@ -1,5 +1,14 @@
+import Metadata from "../../Metadata";
 const Trending = () => {
-  return <div>Hola Trending </div>;
+  return (
+    <>
+      <Metadata
+        title="Trending"
+        content={"The most importants tweet in a place"}
+      />
+      <div>Hola Trending </div>
+    </>
+  )
 };
 
 export default Trending;

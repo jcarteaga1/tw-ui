@@ -1,5 +1,16 @@
+import Metadata from "../../Metadata";
 const Profile = () => {
-  return <div>Hola Profile </div>;
+
+  return (
+    <>
+      <Metadata
+        title="Profile"
+        content={"Profile on your twitter account"}
+      />
+      <div>Hola Profile </div>;
+    </>
+  )
+
 };
 
 export default Profile;

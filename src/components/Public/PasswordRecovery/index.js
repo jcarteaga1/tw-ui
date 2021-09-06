@@ -9,12 +9,17 @@ import {
 } from "@material-ui/core";
 import Twlogoblue from "../../../images/tw_logo_blue.svg";
 import useStyles from "./style";
+import Metadata from "../../Metadata";
 
 const PasswordRecovery = () => {
   const classes = useStyles();
 
   return (
     <>
+      <Metadata
+        title="Password Recovery"
+        content={"The best place to share and meet new friends"}
+      />
       <Grid container direction="row" className={classes.container}>
         <Grid item xs={12}>
           <Box className={classes.box}>

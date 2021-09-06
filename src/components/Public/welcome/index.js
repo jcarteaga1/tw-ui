@@ -3,6 +3,7 @@ import { Grid, Box, Paper, Typography, Button } from "@material-ui/core";
 import Twlogo from "../../../images/tw_logo.svg";
 import Twlogoblue from "../../../images/tw_logo_blue.svg";
 import useStyles from "./style";
+import Metadata from "../../Metadata";
 
 const Welcome = () => {
   const classes = useStyles();
@@ -13,6 +14,10 @@ const Welcome = () => {
 
   return (
     <>
+      <Metadata
+        title="Welcome Twitter"
+        content={"The best place to share and meet new friends"}
+      />
       <Grid container direction="row" className={classes.container}>
         <Grid item xs={5}>
           <Box bgcolor="#1DA1F2" className={classes.box}>

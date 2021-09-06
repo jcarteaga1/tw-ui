@@ -9,12 +9,17 @@ import {
 } from "@material-ui/core";
 import Twlogoblue from "../../../images/tw_logo_blue.svg";
 import useStyles from "./style";
+import Metadata from "../../Metadata";
 
 const SignUp = () => {
   const classes = useStyles();
 
   return (
     <>
+      <Metadata
+        title="Sign Up"
+        content={"The best place to share and meet new friends"}
+      />
       <Grid container direction="row" className={classes.container}>
         <Grid item xs={12}>
           <Box className={classes.box}>
@@ -67,8 +72,10 @@ const SignUp = () => {
                   Sign up
                 </Button>
                 <Typography>
-                  Already have an account? 
-                  <Link to="login" className={classes.button}>Login</Link>
+                  Already have an account?
+                  <Link to="login" className={classes.button}>
+                    Login
+                  </Link>
                 </Typography>
               </Box>
             </Paper>

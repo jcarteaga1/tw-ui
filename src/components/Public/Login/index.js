@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import Twlogoblue from "../../../images/tw_logo_blue.svg";
 import useStyles from "./style";
-
+import Metadata from "../../Metadata";
 const Login = () => {
   const classes = useStyles();
   const history = useHistory();
@@ -18,6 +18,10 @@ const Login = () => {
 
   return (
     <>
+      <Metadata
+        title="Login"
+        content={"Get access to twitter"}
+      />
       <Grid container direction="row" className={classes.container}>
         <Grid item xs={12}>
           <Box className={classes.box}>

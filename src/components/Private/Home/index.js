@@ -20,6 +20,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
+import Timeline from "../Timeline"
 const Home = () => {
   const classes = useStyles();
   return (
@@ -103,6 +104,9 @@ const Home = () => {
       >
         <div className={classes.gridHeader}>
           <h2>Home</h2>
+        </div>
+        <div className={classes.gridContent}>
+          <Timeline></Timeline>
         </div>
       </Grid>
       <Grid

@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         borderLeftStyle:'solid'
     },
     gridHeader:{
-        height:'14%',
+        height:'80px',
         width:'100%',
         display:'flex',
         justifyItems:'center',

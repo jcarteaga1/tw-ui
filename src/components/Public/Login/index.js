@@ -33,7 +33,6 @@ const Login = () => {
 
   const handleInput = async () => {
     const response = await http.post("/users/login", { username, password });
-    console.log(response.data);
     const token = response.data?.data?.token;
     if (token) {
       setAuth(true);

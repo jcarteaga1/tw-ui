@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     token !== null && setAuth(true);
-    console.log("entrooooo", isAuth, token);
   }, []);
 
   return (

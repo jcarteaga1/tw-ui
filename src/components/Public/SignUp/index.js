@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import {
   Grid,
   Box,
@@ -10,9 +11,27 @@ import {
 import Twlogoblue from "../../../images/tw_logo_blue.svg";
 import useStyles from "./style";
 import Metadata from "../../Metadata";
+import http from "../../../helpers/http";
 
 const SignUp = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const [userData, setUserData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+  });
+
+  const handleOnChangeName = (prop) => (event) => {
+    setUserData({ ...userData, [prop]: event.target.value });
+  };
+
+  const handleInput = async () => {
+    const response = await http.post("/users", userData);
+    response.status === 200 ? history.push("/login") : history.push("/signup");
+  };
 
   return (
     <>
@@ -36,12 +55,14 @@ const SignUp = () => {
                     id="name"
                     label="Name"
                     variant="outlined"
+                    onChange={handleOnChangeName("name")}
                   />
                   <TextField
                     className={classes.textInput}
                     id="user"
                     label="Usename"
                     variant="outlined"
+                    onChange={handleOnChangeName("username")}
                   />
                   <TextField
                     className={classes.textInput}
@@ -49,6 +70,7 @@ const SignUp = () => {
                     id="Email"
                     label="Email"
                     variant="outlined"
+                    onChange={handleOnChangeName("email")}
                   />
                   <TextField
                     type="password"
@@ -56,6 +78,7 @@ const SignUp = () => {
                     id="password"
                     label="Password"
                     variant="outlined"
+                    onChange={handleOnChangeName("password")}
                   />
                   <TextField
                     type="password"
@@ -63,12 +86,17 @@ const SignUp = () => {
                     id="passwordConfirmation"
                     label="Password confirmation"
                     variant="outlined"
+                    onChange={handleOnChangeName("passwordConfirmation")}
                   />
                 </form>
               </Box>
 
               <Box>
-                <Button variant="contained" className={classes.primaryButton}>
+                <Button
+                  variant="contained"
+                  className={classes.primaryButton}
+                  onClick={handleInput}
+                >
                   Sign up
                 </Button>
                 <Typography>

@@ -12,12 +12,12 @@ function App() {
         {unrestricted.map(({ path, component }) => (
           <Route exact path={path} component={component} key={path} />
         ))}
-        {isAuth ? (
+        {localStorage.getItem("token") ? (
           restricted.map(({ path, component }) => (
             <Route exact path={path} component={component} key={path} />
           ))
         ) : (
-          <Redirect to="/signup" />
+          <Redirect to="/login" />
         )}
       </Switch>
     </BrowserRouter>

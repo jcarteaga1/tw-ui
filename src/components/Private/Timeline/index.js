@@ -1,4 +1,7 @@
 import Metadata from "../../Metadata";
+import { Grid } from "@material-ui/core";
+import Tweet from "../Tweet";
+
 const Timeline = () => {
   return (
     <>
@@ -6,7 +9,11 @@ const Timeline = () => {
         title="Timeline"
         content={"Content scrolled"}
       />
-      <div>Hola Timeline</div>
+    <Grid container spacing={24}>
+      <Grid>
+        <Tweet/>
+      </Grid>
+    </Grid>
     </>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
 import { render } from "react-snapshot";
-import App from "./App";
+import Providers from "./context";
 import "./index.css";
 render(
   <React.StrictMode>
-    <App />
+    <Providers />
   </React.StrictMode>,
   document.getElementById("root")
 );

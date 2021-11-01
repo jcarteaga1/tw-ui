@@ -105,7 +105,7 @@ const Home = () => {
         <div className={classes.gridHeader}>
           <h2>Home</h2>
         </div>
-        <div className={classes.gridContent}>
+        <div className={classes.gridContainer}>
           <Timeline></Timeline>
         </div>
       </Grid>

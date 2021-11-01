@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     },
     gridContainer:{
         height:'100vh',
+        width:'100%',
     },
     homeGrid:{
         borderRightWidth:'1px',

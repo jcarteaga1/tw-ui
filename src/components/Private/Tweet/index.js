@@ -7,56 +7,50 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
-
-
-// Icons
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-
 import useStyles from "./style";
+import { Grid } from "@material-ui/core";
 
-const Tweet = () => {
+const Tweet = (props) => {
   const classes=useStyles();
+  const { user, content, imgURL } = props.tweets
+
   return (
     <>
       <Metadata
         title="Tweet"
         content={"Description about your post"}
       />
-      <div>
+      <Grid>
         <Card square>
-            <CardHeader
-              avatar={<Avatar src='https://pbs.twimg.com/profile_images/1431105140858179592/DiNAE9jb_400x400.jpg'/>}
-              title='Dolcey Mendoza Jr'
-              subheader= {<span>@dolceymendozajr •5h</span>}
-              action={<ExpandMoreIcon className={classes.moreIcon}/>}
+          <CardHeader
+            avatar={<Avatar src='https://img.europapress.es/fotoweb/fotonoticia_20170323155432_1200.jpg'/>}
+            title={<b>{user.name}</b>}
+            subheader={`@${user.username}`}
+          />
 
-              // avatar={<Avatar src={this.props.data.profileimg}/>}
-              // title={this.props.data.name}
-              // subheader= {<span>{this.props.data.tid} •{this.props.data.time}</span>}
-              // action={<ExpandMoreIcon className={classes.moreIcon}/>}
-            />
-            <CardContent className={classes.content}>
-              <Typography className={classes.text}>
-                This is a tweet. It can be long, or short. Depends on what you have to say. It can have some hashtags too. #likethis This is a tweet. It can be long, or short. Depends on what you have to say. It can have some hashtags too. #likethis
-              </Typography>
-              <CardMedia
-                image='https://pbs.twimg.com/profile_images/1431105140858179592/DiNAE9jb_400x400.jpg'
-                className={classes.media}
-              />
-              {/* {this.props.data.image && (<CardMedia
-                image={this.props.data.image}
-                className={classes.media}
-              />)} */}
-             </CardContent>
-              <CardActions className={classes.bottomActions}>
-                <ChatBubbleOutlineIcon/>
-                <FavoriteBorderIcon/>
-              </CardActions>
+          <CardContent className={classes.content}>
+            <Typography className={classes.text}>
+              {content}
+            </Typography>
+
+            {/* <CardMedia
+              disabled
+              image={imgURL }
+              className={classes.media}
+            /> */}
+          </CardContent>
+
+          <CardActions className={classes.bottomActions}>
+            <ChatBubbleOutlineIcon/>
+            <FavoriteBorderIcon/>
+          </CardActions>
+
         </Card>
         <Divider/>
-      </div>
+      </Grid>
     </>
   );
 };

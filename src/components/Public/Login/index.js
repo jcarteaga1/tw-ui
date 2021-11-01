@@ -82,7 +82,6 @@ const Login = () => {
 
               <Box>
                 <Button
-                  onClick={home}
                   variant="contained"
                   className={classes.primaryButton}
                   onClick={handleInput}

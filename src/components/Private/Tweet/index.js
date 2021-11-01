@@ -1,7 +1,6 @@
 import Metadata from "../../Metadata";
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
@@ -15,7 +14,7 @@ import { Grid } from "@material-ui/core";
 
 const Tweet = (props) => {
   const classes=useStyles();
-  const { user, content, imgURL } = props.tweets
+  const { user, content } = props.tweets
 
   return (
     <>
@@ -35,12 +34,6 @@ const Tweet = (props) => {
             <Typography className={classes.text}>
               {content}
             </Typography>
-
-            {/* <CardMedia
-              disabled
-              image={imgURL }
-              className={classes.media}
-            /> */}
           </CardContent>
 
           <CardActions className={classes.bottomActions}>
